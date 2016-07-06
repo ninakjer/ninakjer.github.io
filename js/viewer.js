@@ -2347,25 +2347,25 @@
     toolbar: true,
 
     // Show the tooltip with image ratio (percentage) when zoom in or zoom out
-    tooltip: true,
+    tooltip: false,
 
     // Enable to move the image
-    movable: true,
+    movable: false,
 
     // Enable to zoom the image
-    zoomable: true,
+    zoomable: false,
 
     // Enable to rotate the image
-    rotatable: true,
+    rotatable: false,
 
     // Enable to scale the image
-    scalable: true,
+    scalable: false,
 
     // Enable CSS3 Transition for some special elements
     transition: true,
 
     // Enable to request fullscreen when play
-    fullscreen: true,
+    fullscreen: false,
 
     // Enable keyboard support
     keyboard: true,
@@ -2420,7 +2420,7 @@
           '<li class="viewer-one-to-one" data-action="one-to-one"></li>' +
           '<li class="viewer-reset" data-action="reset"></li>' +
           '<li class="viewer-prev" data-action="prev"></li>' +
-          '<li class="viewer-play" data-action="play"></li>' +
+          '<li class="viewer-play" data-action="mix"></li>' +
           '<li class="viewer-next" data-action="next"></li>' +
           '<li class="viewer-rotate-left" data-action="rotate-left"></li>' +
           '<li class="viewer-rotate-right" data-action="rotate-right"></li>' +

@@ -253,6 +253,17 @@
   padding: 3px 0;
 }
 
+.viewer-reset {
+  opacity: 0;
+  color: #FFF;
+}
+
+.viewer-one-to-one {
+  opacity: 0;
+  color: #FFF;
+
+}
+
 .viewer-toolbar > li {
   float: left;
   overflow: hidden;
