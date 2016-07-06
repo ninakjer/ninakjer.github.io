@@ -65,8 +65,7 @@
 }
 
 .viewer-play:before {
-  content: 'Play';
-
+  
   background-position: -100px 0;
 }
 
