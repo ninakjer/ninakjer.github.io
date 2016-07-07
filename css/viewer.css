@@ -65,8 +65,9 @@
 }
 
 .viewer-play:before {
+  content: 'Close';
   
-  background-position: -100px 0;
+  background-position: -260px 0;
 }
 
 .viewer-next:before {

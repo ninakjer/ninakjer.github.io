@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="art">
@@ -11,15 +11,6 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/viewer.css">
   <link rel="stylesheet" href="css/main.css">
-
-  <script src="js/jquery.min.js"></script>
-
-
-<script type="text/javascript">
-    var images2 = ['ett.jpg', 'tva.jpg','04.jpg'];
-    var image2 = '/img/jumbotron/' + images2[Math.floor(Math.random() * images2.length)];
-</script>
-
 </head>
 <body>
   <!--[if lt IE 9]>
@@ -36,48 +27,51 @@
   </header>
 
   <!-- Content -->
-  <div id="main" style="position: relative;">
-    <div class="container">
-      <div class="row">
-        <!--div class="col-sm-12 col-md-3"-->
-        <div class="col-md-1">
-          <ul class="nav nav-tabs nav-stacked">
-            <div id="sidebar">
+  <div class="container">
+    <div class="row">
+      <!--div class="col-sm-12 col-md-3"-->
+      <div class="col-md-1">
+        <ul class="nav nav-tabs nav-stacked">
+          <div id="sidebar">
               <span class="works workshover"><a href="painting.html">Painting</a><br></span>
               <span class="works biohover"><a href="photo.html">Photo</a><br></span>
               <span class="works presshover"><a href="sculpture.html">Sculpture</a><br></span>
               <span class="works newshover"><a href="resume.html">Resumé</a><br></span>
-            </div>
-           </ul>
-        </div>
-
-         <div class="col-md-11">
-
-          <div id="frontimage">
-            <script language="JavaScript">
-        document.write('<img src="' + image2 + '" >');
-        </script>
           </div>
-
-        </div>
+         </ul>
       </div>
-    
 
-    <!-- Content -->
-      <div class="row" style="position:fixed; bottom: 0px; ">
-        <div class="col-md-1">
-        </div>
 
-         <div class="col-md-11">
-          <div id="footer"> 
-         <a href="http://ninakjer.se"><p class="heart" ></p></a>
-          </div>
+     <div class="col-md-11">
+      <div class="print-list-year">Meeting and merging part iii</div>
+        <div class="docs-galley">
+          <ul class="docs-pictures clearfix">
+            <li><img data-original="img/project1/sledge1.jpg" src="img/project1/sledge_t.png" alt="Cuo Na Lake"></li>
+            <li><img data-original="img/project1/ski1.jpg" src="img/project1/ski_t.png" alt="Tibetan Plateau"></li>
+            <li><img data-original="img/project1/P1180178.jpg" src="img/project1/eol_t.png" alt="Jokhang Temple"></li>
+            <li><img data-original="img/project1/car.jpg" src="img/project1/car_t.png" alt="Potala Palace 1"></li>
+            <li><img data-original="img/project1/bird.jpg" src="img/project1/bird_t.png" alt="Potala Palace 2"></li>
+            <li><img data-original="img/project1/IMG_0050.JPG" src="img/project1/bike1_t.png" alt="Potala Palace 3"></li>
+            <li><img data-original="img/project1/sciencepark.jpg" src="img/project1/sciencepark_t.png" alt="Lhasa River"></li>
+            <li><img data-original="img/tibet-8.jpg" src="img/thumbnails/tibet-8.jpg" alt="Namtso 1"></li>
+            <li><img data-original="img/tibet-9.jpg" src="img/thumbnails/tibet-9.jpg" alt="Namtso 2"></li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="docs-footer">
+    <div class="container">
+      <p class="heart"></p>
+    </div>
+  </footer>
+
   <!-- Scripts -->
+  <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/viewer.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
