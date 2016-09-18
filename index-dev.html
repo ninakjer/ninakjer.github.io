@@ -17,7 +17,7 @@
 
 <script type="text/javascript">
     var images2 = ['ett.jpg', 'tva.jpg','04.jpg'];
-    var image2 = '/img/jumbotron/' + images2[Math.floor(Math.random() * images2.length)];
+    var image2 = 'img/jumbotron/' + images2[Math.floor(Math.random() * images2.length)];
 </script>
 
 </head>
@@ -39,27 +39,24 @@
   <div id="main" style="position: relative;">
     <div class="container">
       <div class="row">
-        <!--div class="col-sm-12 col-md-3"-->
-        <div class="col-md-1">
+        <div class="col-md-2 col-xs-3">
           <ul class="nav nav-tabs nav-stacked">
             <div id="sidebar">
-              <span class="works workshover"><a href="painting.html">Painting</a><br></span>
-              <span class="works biohover"><a href="photo.html">Photo</a><br></span>
-              <span class="works presshover"><a href="sculpture.html">Sculpture</a><br></span>
+              <span class="works workshover"><a href="painting.html"> Painting </a><br></span>
+              <span class="works biohover"><a href="photo.html"> Photo </a><br></span>
+              <span class="works presshover"><a href="sculpture.html"> Sculpture </a><br></span>
               <span class="works newshover"><a href="resume.html">Resumé</a><br></span>
             </div>
            </ul>
         </div>
 
-         <div class="col-md-11">
-
+     <div class="col-md-10 col-xs-15">
+      <div class="print-list-year"> </div>
+        <div class="docs-galley">
           <div id="frontimage">
-            <script language="JavaScript">
-        document.write('<img src="' + image2 + '" >');
-        </script>
+            <script language="JavaScript"> document.write('<img src="' + image2 + '" >'); </script>
           </div>
-
-        </div>
+        </div></div></div>
       </div>
     
 
