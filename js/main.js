@@ -4,7 +4,9 @@ window.onload = function () {
 
   var Viewer = window.Viewer;
   var console = window.console || { log: function () {} };
+  //var pictures = document.querySelectorAll('.docs-pictures > li');
   var pictures = document.querySelector('.docs-pictures');
+  //var pictures = document.querySelectorAll('.docs-pictures');
   var toggles = document.querySelector('.docs-toggles');
   var buttons = document.querySelector('.docs-buttons');
   var options = {
@@ -48,6 +50,7 @@ window.onload = function () {
       targets = buttons.querySelectorAll('button[data-enable]');
 
       for (i = 0, length = targets.length; i < length; i++) {
+        console.log("target");
         target = targets[i];
         target.disabled = true;
 

@@ -1,12 +1,15 @@
 /*!
- * Viewer.js v0.4.0
+ * Viewer.js v0.5.0
  * https://github.com/fengyuanchen/viewerjs
  *
  * Copyright (c) 2015-2016 Fengyuan Chen
  * Released under the MIT license
  *
- * Date: 2016-03-20T07:17:50.179Z
+ * Date: 2016-07-22T08:46:05.003Z
+ * Modified by Johan Sundin
+ *
  */
+
 
 (function (global, factory) {
   if (typeof module === 'object' && typeof module.exports === 'object') {
@@ -58,8 +61,7 @@
   var EVENT_KEYDOWN = 'keydown';
   var EVENT_CLICK = 'click';
   var EVENT_RESIZE = 'resize';
-  var EVENT_BUILD = 'build';
-  var EVENT_BUILT = 'built';
+  var EVENT_READY = 'ready';
   var EVENT_SHOW = 'show';
   var EVENT_SHOWN = 'shown';
   var EVENT_HIDE = 'hide';
@@ -552,8 +554,12 @@
       transforms.push('rotate(' + rotate + 'deg)');
     }
 
-    if (isNumber(scaleX) && isNumber(scaleY)) {
-      transforms.push('scale(' + scaleX + ',' + scaleY + ')');
+    if (isNumber(scaleX)) {
+      transforms.push('scaleX(' + scaleX + ')');
+    }
+
+    if (isNumber(scaleY)) {
+      transforms.push('scaleY(' + scaleY + ')');
     }
 
     return transforms.length ? transforms.join(' ') : 'none';
@@ -603,10 +609,19 @@
       var _this = this;
       var options = _this.options;
       var element = _this.element;
-      var isImg = element.tagName.toLowerCase() === 'img';
+
+      console.log("element");
+      console.log(element);
+
+      var isImg = element.tagName.toLowerCase() == 'img';
+      //var img = getByTag(item, 'img')[0];
       var images = isImg ? [element] : getByTag(element, 'img');
       var length = images.length;
       var ready = proxy(_this.ready, _this);
+
+      console.log("images");
+      console.log(images);
+
 
       if (getData(element, NAMESPACE)) {
         return;
@@ -618,12 +633,8 @@
         return;
       }
 
-      if (isFunction(options.build)) {
-        addListener(element, EVENT_BUILD, options.build, true);
-      }
-
-      if (dispatchEvent(element, EVENT_BUILD) === false) {
-        return;
+      if (isFunction(options.ready)) {
+        addListener(element, EVENT_READY, options.ready, true);
       }
 
       // Override `transition` option if it is not supported
@@ -638,7 +649,7 @@
       _this.body = document.body;
 
       if (options.inline) {
-        addListener(element, EVENT_BUILT, function () {
+        addListener(element, EVENT_READY, function () {
           _this.view();
         }, true);
 
@@ -743,11 +754,7 @@
 
       _this.isBuilt = true;
 
-      if (isFunction(options.built)) {
-        addListener(element, EVENT_BUILT, options.built, true);
-      }
-
-      dispatchEvent(element, EVENT_BUILT);
+      dispatchEvent(element, EVENT_READY);
     },
 
     unbuild: function () {
@@ -860,10 +867,13 @@
       var list = _this.list;
       var items = [];
 
+      console.log("the images");
+      console.log(_this.images);
       each(_this.images, function (image, i) {
         var src = image.src;
         var alt = image.alt || getImageName(src);
         var url = options.url;
+        console.log(src, i);
 
         if (!src) {
           return;
@@ -896,6 +906,8 @@
       });
 
       _this.items = getByTag(list, 'li');
+      console.log("items");
+      console.log(_this.items);
 
       if (options.transition) {
         addListener(element, EVENT_VIEWED, function () {
@@ -1600,7 +1612,7 @@
     // View the previous image
     prev: function () {
       var _this = this;
-
+      console.log("previous");
       _this.view(max(_this.index - 1, 0));
 
       return _this;
@@ -1609,7 +1621,7 @@
     // View the next image
     next: function () {
       var _this = this;
-
+      console.log("next");
       _this.view(min(_this.index + 1, _this.length - 1));
 
       return _this;
@@ -1959,7 +1971,7 @@
       }
 
       _this.isFulled = true;
-      addClass(_this.body, CLASS_OPEN);
+      _this.open();
       addClass(_this.button, CLASS_FULLSCREEN_EXIT);
 
       if (options.transition) {
@@ -2003,7 +2015,7 @@
       }
 
       _this.isFulled = false;
-      removeClass(_this.body, CLASS_OPEN);
+      _this.close();
       removeClass(_this.button, CLASS_FULLSCREEN_EXIT);
 
       if (options.transition) {
@@ -2190,6 +2202,20 @@
       return _this;
     },
 
+    open: function () {
+      var body = this.body;
+
+      addClass(body, CLASS_OPEN);
+      body.style.paddingRight = this.scrollbarWidth + 'px';
+    },
+
+    close: function () {
+      var body = this.body;
+
+      removeClass(body, CLASS_OPEN);
+      body.style.paddingRight = 0;
+    },
+
     shown: function () {
       var _this = this;
       var options = _this.options;
@@ -2220,7 +2246,7 @@
       _this.isShown = false;
       _this.isVisible = false;
       _this.unbind();
-      removeClass(_this.body, CLASS_OPEN);
+      _this.close();
       addClass(_this.viewer, CLASS_HIDE);
       _this.resetList();
       _this.resetImage();

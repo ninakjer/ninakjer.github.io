@@ -32,6 +32,10 @@ body
     overflow: hidden;
     padding-left: 30px;
   }
+  .docs-pictures > p {
+    display: inline !important; 
+    float: left; !important"
+  }
 }
 
 @media (max-width: 992px) {
