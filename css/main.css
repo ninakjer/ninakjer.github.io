@@ -8,6 +8,11 @@ body
   padding: 0;
 }
 
+/*
+Min-Width: Refers to everything greater than or equal to the amount given. 
+Max-Width: Refers to everything less than or equal to the amount given.
+*/
+
 @media (min-width: 1470px){
   .container{
     width:1470px;
@@ -24,6 +29,11 @@ body
   }
 }
 
+@media (max-width: 640px) {
+  .col-xs-3 {
+    width: 100.0%;
+  }
+}
 
 /*
 @media (min-width: 992px) {
