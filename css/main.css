@@ -13,10 +13,10 @@ Min-Width: Refers to everything greater than or equal to the amount given.
 Max-Width: Refers to everything less than or equal to the amount given.
 */
 
-@media (min-width: 1470px){
+@media (min-width: 1440px){
   .container{
-    width:1470px;
-    max-width:1470px;
+    width:1440px;
+    max-width:1440px;
   }
 }
 
@@ -34,37 +34,6 @@ Max-Width: Refers to everything less than or equal to the amount given.
     width: 100.0%;
   }
 }
-
-/*
-@media (min-width: 992px) {
-  .docs-pictures > li {
-    float: left;
-    width: 188px;
-    height: 188px;
-    margin: 10px 10px 10px 10px;
-    position: relative;
-    border: 0px solid transparent;
-    overflow: hidden;
-    padding-left: 30px;
-  }
-  .docs-pictures > p {
-    display: inline !important; 
-    float: left; !important"
-  }
-}
-
-@media (max-width: 992px) {
-  .docs-pictures > li {
-    float: left;
-    width: 125px;
-    height: 125px;
-    margin: 0px 15px 15px 0px;
-    position: relative;
-    border: 0px solid transparent;
-    overflow: hidden;
-  }
-}
-*/
 
 /* Content */
 
