@@ -197,14 +197,14 @@ a:hover
 /* PRINTS */
 
 .print-list-year {
-  margin: 45px 0 20px 0;
   padding-left: 30px;
+  margin: 45px 0 20px 0;
+  font-size: 24px;
 }
 
 .print-list-year:first-child {
   margin: 0px 0 20px 0;
-  font-size: 24px;
-}
+ }
 
 
 .print-list {
